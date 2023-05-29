@@ -1,2 +1,2 @@
 # PySmartCalc
-Smart calculator, using C++ RPN (Reverse Polish Notation), QML (UI) and MVVM pattern binding
+Smart calculator, using C++ RPN (Reverse Polish Notation), QML (UI) and Python3 MVVM pattern binding
