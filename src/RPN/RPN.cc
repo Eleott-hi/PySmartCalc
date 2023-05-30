@@ -11,17 +11,4 @@ PYBIND11_MODULE(SmartCalc, m) {
       .def("form_final_expression",
            &s21::RPN_Calculation::form_final_expression)
       .def("check_expression", &s21::RPN_Calculation::check_expression);
-
-  m.doc() = R"pbdoc(
-        Pybind11 example plugin
-        -----------------------
-
-        .. currentmodule:: SmartCalc
-
-        .. autosummary::
-           :toctree: _generate
-
-           add
-           subtract
-    )pbdoc";
 }

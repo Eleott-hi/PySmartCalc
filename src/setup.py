@@ -12,8 +12,7 @@ setup(
         Pybind11Extension("SmartCalc",
                           #   ["main.cpp"],
                           sorted(glob("RPN/*.cc")),
-                          # Example: passing in the version to the compiled code
-                          define_macros=[('VERSION_INFO', __version__)],
+                          define_macros=[('DEBUG', 1)],
                           ),
     ],
     cmdclass={"build_ext": build_ext},
