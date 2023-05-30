@@ -1,7 +1,10 @@
-import example
+from SmartCalc import RPN
 
+print("\nTEST\n")
 
-p = example.Pet("Lucy", example.Pet.Cat)
-print(p.type)
-print(int(p.type))
-print(example.Pet.Kind.__members__)
+rpn = RPN()
+print("rpn:", rpn)
+print(rpn.calc("1 + 2 / 5"))
+print(RPN.form_final_expression("1 + 2 / 5"))
+print(RPN.check_expression("1 + 2 / 5()"))
+print()

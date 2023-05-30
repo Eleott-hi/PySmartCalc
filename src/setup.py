@@ -1,12 +1,20 @@
-from glob import glob
+# Available at setup time due to pyproject.toml
+from pybind11.setup_helpers import Pybind11Extension, build_ext
 from setuptools import setup
-from pybind11.setup_helpers import Pybind11Extension
+from glob import glob
 
-ext_modules = [
-    Pybind11Extension(
-        "python_example",
-        sorted(glob("src/*.cpp")),  # Sort source files for reproducibility
-    ),
-]
 
-setup(..., ext_modules=ext_modules)
+__version__ = "3.0.0"
+
+setup(
+    version=__version__,
+    ext_modules=[
+        Pybind11Extension("SmartCalc",
+                          #   ["main.cpp"],
+                          sorted(glob("RPN/*.cc")),
+                          # Example: passing in the version to the compiled code
+                          define_macros=[('VERSION_INFO', __version__)],
+                          ),
+    ],
+    cmdclass={"build_ext": build_ext},
+)
